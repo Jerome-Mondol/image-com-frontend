@@ -1,18 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4be.png" type="image/png" />
   <title>imgcompressor.bdtools.com - Fast & Free Image Compressor</title>
+
+  <!-- Primary SEO Meta -->
+  <meta name="title" content="imgcompressor.bdtools.com - Fast & Free Image Compressor & Converter" />
+  <meta name="description" content="Compress and convert images instantly with imgcompressor.bdtools.com. Free, fast, secure, and supports JPEG, PNG, WEBP & more. Save space, boost speed." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://imgcompressor.bdtools.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://imgcompressor.bdtools.com/" />
+  <meta property="og:title" content="Fast & Free Image Compressor" />
+  <meta property="og:description" content="Compress and convert images instantly with imgcompressor.bdtools.com. 100% free, no signup required." />
+  <meta property="og:image" content="https://imgcompressor.bdtools.com/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://imgcompressor.bdtools.com/" />
+  <meta property="twitter:title" content="Fast & Free Image Compressor" />
+  <meta property="twitter:description" content="Compress images in seconds — for free. No sign-up, no limits." />
+  <meta property="twitter:image" content="https://imgcompressor.bdtools.com/og-image.jpg" />
+
+  <!-- Favicon -->
+  <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Styles -->
   <style>
-    /* Animate drag-and-drop border */
     @keyframes pulse-border {
       0%, 100% { border-color: #6366f1; }
       50% { border-color: #818cf8; }
     }
-
-    /* Fade-in animation */
     .fade-in {
       animation: fadeIn ease 1s;
       animation-fill-mode: forwards;
@@ -22,8 +51,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
-    /* Bounce animation for button */
     .bounce-once {
       animation: bounce 0.6s ease forwards;
     }
@@ -32,10 +59,20 @@
       50% { transform: translateY(-8px); }
     }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2QBY750TD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F2QBY750TD');
+  </script>
 </head>
+
 <body class="bg-gradient-to-b from-indigo-100 to-white min-h-screen flex flex-col">
 
-  <!-- Header -->
   <header class="bg-indigo-600 text-white shadow-lg sticky top-0 z-50">
     <nav class="max-w-5xl mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-extrabold tracking-wide select-none cursor-default">imgcompressor.bdtools.com</h1>
@@ -43,66 +80,38 @@
         <li><a href="#how" class="hover:text-indigo-300 transition">How It Works</a></li>
         <li><a href="#why" class="hover:text-indigo-300 transition">Why Us</a></li>
         <li><a href="#faq" class="hover:text-indigo-300 transition">FAQ</a></li>
+        <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
+        <li><a href="#privacy" class="hover:text-indigo-300 transition">Privacy</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="flex-grow max-w-4xl mx-auto p-6 sm:p-10 space-y-16">
+  <main class="max-w-4xl mx-auto p-6 sm:p-10 space-y-16">
 
-    <!-- Hero + Upload -->
-    <section
-      id="hero"
-      class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center space-y-6 fade-in"
-    >
+    <section id="hero" class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center space-y-6 fade-in">
       <h2 class="text-indigo-700 text-4xl font-extrabold text-center leading-tight">
         Fast, Free, and Easy Image Compression & Conversion
       </h2>
       <p class="text-gray-700 max-w-xl text-center">
         Compress or convert your images instantly with no hassle. Save bandwidth, storage, and time — right in your browser.
       </p>
-
-      <!-- Upload box -->
-      <div
-        id="drop-zone"
-        class="border-4 border-dashed border-indigo-400 rounded-lg p-12 text-center cursor-pointer hover:bg-indigo-50 transition relative"
-        role="button"
-        aria-label="Upload or drag and drop image here"
-      >
+      <div id="drop-zone" class="border-4 border-dashed border-indigo-400 rounded-lg p-12 text-center cursor-pointer hover:bg-indigo-50 transition relative" role="button" aria-label="Upload or drag and drop image here">
         <p class="text-indigo-600 font-semibold select-none pointer-events-none">
           Drag & Drop your image here or click to browse
         </p>
-        <input
-          id="file-input"
-          type="file"
-          accept="image/*"
-          class="hidden"
-        />
-        <!-- Animated border pulse when dragging -->
+        <input id="file-input" type="file" accept="image/*" class="hidden" />
         <div id="pulse-border" class="absolute inset-0 rounded-lg pointer-events-none"></div>
       </div>
-
-      <!-- Preview -->
       <div id="preview" class="hidden flex flex-col items-center space-y-5 w-full max-w-md mt-6">
-        <img
-          id="preview-img"
-          class="rounded-lg shadow-lg max-w-full max-h-72 object-contain border border-gray-300"
-          alt="Preview"
-          draggable="false"
-        />
+        <img id="preview-img" class="rounded-lg shadow-lg max-w-full max-h-72 object-contain border border-gray-300" alt="Preview" draggable="false" />
         <p id="size-info" class="text-gray-700 font-semibold"></p>
-        <button
-          id="compress-btn"
-          class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg font-bold shadow-md transition transform hover:scale-105 active:scale-95"
-          aria-live="polite"
-        >
+        <button id="compress-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg font-bold shadow-md transition transform hover:scale-105 active:scale-95" aria-live="polite">
           Compress & Download
         </button>
         <p id="message" class="text-red-600 font-semibold mt-2 min-h-[1.25rem]"></p>
       </div>
     </section>
 
-    <!-- How It Works -->
     <section id="how" class="bg-indigo-50 rounded-xl p-8 shadow-lg fade-in">
       <h3 class="text-3xl font-bold mb-4 text-indigo-700">How It Works</h3>
       <ol class="list-decimal list-inside text-gray-700 space-y-3 max-w-xl mx-auto">
@@ -112,7 +121,6 @@
       </ol>
     </section>
 
-    <!-- Why Us -->
     <section id="why" class="bg-white rounded-xl p-8 shadow-lg fade-in">
       <h3 class="text-3xl font-bold mb-4 text-indigo-700">Why Choose Us?</h3>
       <ul class="list-disc list-inside space-y-3 max-w-xl mx-auto text-gray-700">
@@ -124,41 +132,61 @@
       </ul>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="bg-indigo-50 rounded-xl p-8 shadow-lg fade-in">
       <h3 class="text-3xl font-bold mb-4 text-indigo-700">Frequently Asked Questions</h3>
       <dl class="max-w-xl mx-auto space-y-6 text-gray-700">
         <div>
           <dt class="font-semibold">Is it really free to use?</dt>
-          <dd class="ml-4 mt-1">
-            Absolutely! You can compress and convert unlimited images for free.
-          </dd>
+          <dd class="ml-4 mt-1">Absolutely! You can compress and convert unlimited images for free.</dd>
         </div>
         <div>
           <dt class="font-semibold">Are my images stored on your server?</dt>
-          <dd class="ml-4 mt-1">
-            No, we only process images temporarily and delete them immediately after compression.
-          </dd>
+          <dd class="ml-4 mt-1">No, we only process images temporarily and delete them immediately after compression.</dd>
         </div>
         <div>
           <dt class="font-semibold">What formats do you support?</dt>
-          <dd class="ml-4 mt-1">
-            JPEG, PNG, WEBP, and more popular image formats.
-          </dd>
+          <dd class="ml-4 mt-1">JPEG, PNG, WEBP, and more popular image formats.</dd>
         </div>
         <div>
           <dt class="font-semibold">Can I compress multiple images at once?</dt>
-          <dd class="ml-4 mt-1">
-            Currently, we support one image at a time but multi-image support is coming soon!
-          </dd>
+          <dd class="ml-4 mt-1">Currently, we support one image at a time but multi-image support is coming soon!</dd>
         </div>
       </dl>
     </section>
+
+    <section id="contact" class="bg-white rounded-xl p-8 shadow-lg fade-in">
+      <h3 class="text-3xl font-bold mb-4 text-indigo-700">Contact Us</h3>
+      <p class="text-gray-700 max-w-xl mx-auto text-center mb-6">
+        Got a question, feedback, or issue? Reach out anytime.
+      </p>
+      <div class="text-center text-gray-600 font-medium">
+        📧 Email: <a href="mailto:jrm.mews@gmail.com" class="text-indigo-600 hover:underline">jrm.mews@gmail.com</a><br />
+      </div>
+    </section>
+
+    <section id="privacy" class="bg-indigo-50 rounded-xl p-8 shadow-lg fade-in">
+      <h3 class="text-3xl font-bold mb-4 text-indigo-700">Privacy Policy</h3>
+      <div class="text-gray-700 space-y-4 max-w-2xl mx-auto text-sm leading-relaxed">
+        <p>
+          We value your privacy. Any image uploaded to our service is processed temporarily in memory and never stored on our servers. Once compression is complete, your file is removed automatically.
+        </p>
+        <p>
+          We do not collect, share, or sell any personal data. Analytics may be used to monitor general usage patterns to improve the service.
+        </p>
+        <p>
+          By using this site, you agree to this privacy policy. If you have any questions, contact us via the info provided in the contact section.
+        </p>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-indigo-600 text-white py-6 text-center font-semibold select-none">
-    &copy; 2025 imgcompressor.bdtools.com — Built with 💜 by Captain
+  <footer class="bg-indigo-600 text-white py-6 text-center font-semibold select-none space-y-2">
+    <p>&copy; 2025 imgcompressor.bdtools.com — Built with ❤️ by Captain</p>
+    <p>
+      <a href="#privacy" class="underline hover:text-indigo-300">Privacy Policy</a> |
+      <a href="#contact" class="underline hover:text-indigo-300">Contact</a>
+    </p>
   </footer>
 
   <script>
@@ -170,13 +198,10 @@
     const compressBtn = document.getElementById("compress-btn");
     const message = document.getElementById("message");
     const pulseBorder = document.getElementById("pulse-border");
-
     let selectedFile;
 
-    // Open file selector on click
     dropZone.addEventListener("click", () => fileInput.click());
 
-    // Drag events to show animated border
     dropZone.addEventListener("dragover", (e) => {
       e.preventDefault();
       dropZone.classList.add("bg-indigo-100");
@@ -192,15 +217,11 @@
       e.preventDefault();
       dropZone.classList.remove("bg-indigo-100");
       pulseBorder.style.animation = "none";
-      if (e.dataTransfer.files.length > 0) {
-        handleFile(e.dataTransfer.files[0]);
-      }
+      if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
     });
 
     fileInput.addEventListener("change", () => {
-      if (fileInput.files.length > 0) {
-        handleFile(fileInput.files[0]);
-      }
+      if (fileInput.files.length > 0) handleFile(fileInput.files[0]);
     });
 
     function handleFile(file) {
