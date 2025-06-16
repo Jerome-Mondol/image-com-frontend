@@ -1,0 +1,20 @@
+{
+  "name": "imgcompressor.bdtools.com",
+  "short_name": "ImgCompress",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6366f1",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "public/icons/analytics_888831.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "public/icons/analytics_888831.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
